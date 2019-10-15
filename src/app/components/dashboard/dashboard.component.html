@@ -1,0 +1,14 @@
+<div class="container" [@toggle]="state">
+  <div class="header" (click)="toggle()">
+    <span class="title">{{ title }}</span>
+  </div>
+  <div class="options">
+    <ul class="list options-list">
+      <li *ngFor="let option of options">{{ option }}</li>
+    </ul>
+  </div>
+  <div class="body" class="bets">
+    <!-- do ang-switch here -->
+    <app-live-bets></app-live-bets>
+  </div>
+</div>

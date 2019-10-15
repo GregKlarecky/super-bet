@@ -1,0 +1,27 @@
+@import "~src/variables";
+
+.container {
+  border: 2px solid $yellow;
+  background: $brand-color-dark;
+  overflow-y: hidden;
+  .header {
+    text-transform: uppercase;
+    color: $yellow;
+    cursor: pointer;
+    span {
+      padding: 0.5rem;
+      display: inline-block;
+    }
+  }
+  .options {
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #fff;
+    &-list {
+      display: flex;
+      li {
+        padding: 0.5rem;
+      }
+    }
+  }
+}

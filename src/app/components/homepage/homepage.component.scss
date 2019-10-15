@@ -1,0 +1,26 @@
+@import "~src/variables";
+
+.container {
+  width: $screen-lg-min;
+  padding: 1rem 0;
+  margin: auto;
+  display: flex;
+}
+
+.nav {
+  &-left {
+    margin-right: 0.5rem;
+    width: 20%;
+  }
+  &-right {
+    width: 25%;
+    margin-left: 0.5rem;
+  }
+  &-item {
+    margin-bottom: 1rem;
+  }
+}
+.main {
+  width: 55%;
+  margin: 0 0.5rem;
+}

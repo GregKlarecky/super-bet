@@ -1,0 +1,6 @@
+@import "~src/variables";
+
+:host {
+  background: $brand-color-darker;
+  display: block;
+}
