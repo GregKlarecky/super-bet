@@ -1,3 +1,16 @@
-<p>
-  bets works!
-</p>
+<div *ngIf="team">
+  <span>
+    {{ team.name }}
+  </span>
+  <span>
+    {{ team.win | floor }}
+  </span>
+</div>
+<div *ngIf="draw">
+  <span>
+    X
+  </span>
+  <span>
+    {{ draw }}
+  </span>
+</div>

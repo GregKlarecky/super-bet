@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
+import { ITeam } from "src/app/interfaces/bet.interface";
 
 @Component({
-  selector: 'app-bets',
-  templateUrl: './bets.component.html',
-  styleUrls: ['./bets.component.css']
+  selector: "app-bet",
+  templateUrl: "./bets.component.html",
+  styleUrls: ["./bets.component.scss"]
 })
-export class BetsComponent implements OnInit {
+export class BetComponent implements OnInit {
+  @Input() team: ITeam[];
+  @Input() draw: number;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

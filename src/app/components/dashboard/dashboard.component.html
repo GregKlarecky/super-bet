@@ -1,14 +1,74 @@
-<div class="container" [@toggle]="state">
+<div class="container" [@toggle]="{ value: state, params: { height: height } }">
   <div class="header" (click)="toggle()">
     <span class="title">{{ title }}</span>
   </div>
   <div class="options">
     <ul class="list options-list">
-      <li *ngFor="let option of options">{{ option }}</li>
+      <li
+        *ngFor="let option of options; let i = index"
+        appDimensions
+        (click)="selectSport(option, i)"
+      >
+        <img [src]="'assets/images/' + option + '.png'" [alt]="option" />
+        <span>
+          {{ option }}
+        </span>
+      </li>
+      <span
+        class="highlighteer"
+        [@slide]="{ value: slide, params: { translate: translate } }"
+      ></span>
     </ul>
   </div>
   <div class="body" class="bets">
-    <!-- do ang-switch here -->
-    <app-live-bets></app-live-bets>
+    <ng-container
+      *ngTemplateOutlet="type === 'live-bets' ? liveBets : simpleBets"
+    ></ng-container>
   </div>
 </div>
+
+<ng-template #liveBets>
+  <table class="live-betting">
+    <thead>
+      <tr>
+        <th class="clock"><i class="far fa-clock"></i></th>
+        <th class="teams">event</th>
+        <th class="color-yellow">score</th>
+        <th>leage</th>
+        <th>1</th>
+        <th>X</th>
+        <th>2</th>
+      </tr>
+    </thead>
+    <tbody @switchPage *ngIf="selectedSport?.id === selectedId">
+      <tr *ngFor="let bet of selectedSport?.items">
+        <td>12:30</td>
+        <td class="teams">
+          {{ bet.teams[0].name }} vs {{ bet.teams[1].name }}
+        </td>
+        <td class="color-yellow">1 : 0</td>
+        <td>Champion leage</td>
+        <td>{{ bet.teams[0].win | floor }}</td>
+        <td>{{ bet.draw | floor }}</td>
+        <td>{{ bet.teams[1].win | floor }}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>
+
+<ng-template #simpleBets>
+  <div class="wrapper">
+    <ul
+      class="list best-bets"
+      @bounceList
+      *ngIf="selectedSport?.id === selectedId"
+    >
+      <li *ngFor="let bet of selectedSport?.items" class="list-item">
+        <div class="odds">12.03.19 12:30</div>
+        <app-bet *ngIf="bet" [team]="bet.teams[0]" class="odds"></app-bet>
+        <app-bet *ngIf="bet" [draw]="bet.draw | floor" class="odds"></app-bet>
+        <app-bet *ngIf="bet" [team]="bet.teams[1]" class="odds"></app-bet>
+      </li>
+    </ul>
+  </div>
+</ng-template>

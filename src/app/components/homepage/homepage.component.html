@@ -10,8 +10,12 @@
     </div>
   </div>
   <div class="main">
-    <app-dashboard title="live betting" class="mb-1"></app-dashboard>
-    <app-dashboard title="best bets"></app-dashboard>
+    <app-dashboard
+      title="live betting"
+      type="live-bets"
+      class="mb-1"
+    ></app-dashboard>
+    <app-dashboard title="best bets" type="bets"></app-dashboard>
   </div>
   <div class="nav nav-right">
     <div class="card nav-item" *ngFor="let item of [1, 2, 3]">

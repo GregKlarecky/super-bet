@@ -2,9 +2,10 @@
 
 .container {
   border: 2px solid $yellow;
-  background: $brand-color-dark;
+  background: #09172f;
   overflow-y: hidden;
   .header {
+    background: $brand-color-dark;
     text-transform: uppercase;
     color: $yellow;
     cursor: pointer;
@@ -14,14 +15,84 @@
     }
   }
   .options {
+    background: $brand-color-dark;
     text-transform: uppercase;
     cursor: pointer;
     color: #fff;
     &-list {
+      position: relative;
       display: flex;
       li {
-        padding: 0.5rem;
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 140px;
+        img {
+          margin-right: 0.5rem;
+        }
       }
     }
   }
+}
+
+.bets {
+  overflow-x: hidden;
+}
+
+.teams {
+  width: 290px;
+}
+
+.clock {
+  width: 42px;
+}
+.wrapper {
+  padding: 1rem;
+}
+
+.best-bets {
+  font-size: 12px;
+  width: 100%;
+  li {
+    display: flex;
+    .odds {
+      margin: 0.2rem;
+      width: calc((100% - 125px) / 3);
+      &:first-child {
+        max-width: 100px;
+        padding: 0.45rem 0;
+      }
+    }
+  }
+}
+
+.live-betting {
+  text-align: center;
+  background: #09172f;
+  width: 100%;
+  thead {
+    text-transform: uppercase;
+    th {
+      padding: 0.6rem;
+      font-weight: 500;
+    }
+  }
+  tbody {
+    font-size: 12px;
+    td {
+      padding: 0.45rem 0;
+    }
+  }
+}
+
+.color-yellow {
+  color: $yellow;
+}
+
+.highlighteer {
+  border: 1px solid $yellow;
+  position: absolute;
+  width: 140px;
+  bottom: 0;
 }

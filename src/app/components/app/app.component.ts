@@ -11,11 +11,7 @@ export class AppComponent implements OnInit {
 
   constructor(private apiService: APIService) {}
 
-  ngOnInit() {
-    this.apiService.sConnection.subscribe(msg => {
-      console.log(msg);
-    });
-  }
+  ngOnInit() {}
 
   lounchSocket() {
     this.apiService.pullStart().subscribe((data: any) => {
