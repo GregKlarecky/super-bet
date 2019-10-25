@@ -8,7 +8,7 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { CouponComponent } from "./components/coupon/coupon.component";
 import { RouterModule, Routes } from "@angular/router";
 import { appRoutes } from "./routes";
-import { BetComponent } from "./components/bets/bets.component";
+import { BetComponent } from "./components/bet/bet.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FloorPipe } from "./pipes/floor.pipe";
 import { DimensionsDirective } from "./directives/dimensions.directive";
