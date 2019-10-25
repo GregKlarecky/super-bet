@@ -1,0 +1,19 @@
+@import "~src/variables";
+
+img {
+  margin-right: 1rem;
+}
+.option {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: color 200ms;
+  &:hover {
+    color: $yellow;
+  }
+}
+
+.custom-body {
+  padding: 0.5rem 0;
+}

@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-header">{{ title }}</div>
+  <div class="card-body custom-body">
+    <div *ngFor="let item of items; let i = index" class="option">
+      <img [src]="'assets/images/football.png'" alt="" *ngIf="itemsSet == 0" />
+      <img
+        [src]="'assets/images/' + item + '.png'"
+        alt=""
+        *ngIf="itemsSet == 1"
+      />{{ item }}
+    </div>
+  </div>
+</div>

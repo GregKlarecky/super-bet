@@ -1,13 +1,12 @@
 <div class="container">
   <div class="nav nav-left">
-    <div class="card nav-item" *ngFor="let item of [1, 2, 3]">
-      <div class="card-header">Header</div>
-      <div class="card-body">
-        Lorem ipsum fwefwe efewf fr werwfgtwr htregrf dw Lorem ipsum fwefwe
-        efewf fr werwfgtwr gtwr htregrf dw Lorem ipsum fwefwe efewf fr werwfgtwr
-        htregrf dw
-      </div>
-    </div>
+    <app-card
+      class="nav-item"
+      title="Recomended"
+      itemsSet="0"
+      class="nav-item"
+    ></app-card>
+    <app-card class="nav-item" title="Bets" itemsSet="1"></app-card>
   </div>
   <div class="main">
     <app-dashboard
@@ -18,7 +17,7 @@
     <app-dashboard title="best bets" type="bets"></app-dashboard>
   </div>
   <div class="nav nav-right">
-    <div class="card nav-item" *ngFor="let item of [1, 2, 3]">
+    <div class="card nav-item">
       <div class="card-header">Header</div>
       <div class="card-body">
         Lorem ipsum fwefwe efewf fr werwfgtwr htregrf dw Lorem ipsum fwefwe
@@ -26,5 +25,11 @@
         htregrf dw Lorem ipsum fwefwe efewf fr werwfgtwr htregrf dw
       </div>
     </div>
+    <img
+      class="nav-item banner"
+      [src]="'assets/images/' + banner"
+      alt=""
+      *ngFor="let banner of banners"
+    />
   </div>
 </div>

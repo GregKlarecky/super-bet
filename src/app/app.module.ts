@@ -12,6 +12,8 @@ import { BetComponent } from "./components/bet/bet.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FloorPipe } from "./pipes/floor.pipe";
 import { DimensionsDirective } from "./directives/dimensions.directive";
+import { CardComponent } from './components/card/card.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { DimensionsDirective } from "./directives/dimensions.directive";
     CouponComponent,
     BetComponent,
     FloorPipe,
-    DimensionsDirective
+    DimensionsDirective,
+    CardComponent,
+    FooterComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
