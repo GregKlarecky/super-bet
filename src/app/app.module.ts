@@ -12,8 +12,9 @@ import { BetComponent } from "./components/bet/bet.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FloorPipe } from "./pipes/floor.pipe";
 import { DimensionsDirective } from "./directives/dimensions.directive";
-import { CardComponent } from './components/card/card.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { CardComponent } from "./components/card/card.component";
+import { FooterComponent } from "./components/footer/footer.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserModule,
     BrowserAnimationsModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

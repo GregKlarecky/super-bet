@@ -1,0 +1,98 @@
+@import "~src/variables";
+
+.coupon-header {
+  background: $yellow;
+  color: $brand-color-dark;
+  font-weight: 600;
+}
+.bet-box {
+  display: flex;
+  justify-content: space-between;
+  background: $yellow-active;
+  color: $brand-color-dark;
+  padding: 0.5rem;
+  border-radius: 3px;
+  margin-bottom: 0.2rem;
+}
+
+.coupon-body {
+  margin: -0.5rem -0.9rem -0.9rem -0.5rem;
+}
+
+.bold {
+  font-weight: 600;
+}
+.no-events {
+  display: flex;
+  align-items: flex-start;
+  img {
+    margin-right: 1rem;
+  }
+}
+
+.totals {
+  padding-top: 1rem;
+  font-size: 12px;
+  p {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.bet {
+  width: 80%;
+  font-size: 12px;
+  .row {
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      &:first-child {
+        overflow-x: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+    &:first-child {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+.close {
+  width: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    display: flex;
+    align-items: center;
+    &:before,
+    &:after {
+      position: absolute;
+      display: block;
+      content: "";
+      border: 1px solid $brand-color-dark;
+      height: 12px;
+      border-radius: 2px;
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+input {
+  cursor: pointer;
+  width: 70px;
+  background: #2d436c;
+  color: #fff;
+  border: none;
+  text-align: right;
+  transition: background 200ms;
+}
+
+.btn-coupon {
+  width: 100%;
+}

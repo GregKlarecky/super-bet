@@ -7,6 +7,7 @@ div {
   width: 100%;
   background: $badge;
   border-radius: 5px;
+  transition: background 200ms, color 200ms;
   cursor: pointer;
   span {
     overflow: hidden;
@@ -15,4 +16,9 @@ div {
     max-width: 75%;
     display: block;
   }
+}
+
+.selected {
+  background: $yellow;
+  color: $brand-color-dark;
 }

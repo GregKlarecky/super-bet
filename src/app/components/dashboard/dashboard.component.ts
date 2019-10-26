@@ -1,11 +1,12 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { APIService } from "src/app/api.service";
-import { IBet, ISport } from "src/app/interfaces/bet.interface";
+import { IBet, ISport, ITeam } from "src/app/interfaces/bet.interface";
 import { slide } from "src/app/animation/dashboard-slide.animation";
 import { timer } from "rxjs";
 import { switchPage } from "src/app/animation/switchPage.animation";
 import { toggleDashboard } from "src/app/animation/toggleDashboard.animation";
 import { bounceList } from "src/app/animation/bounce-list.animation";
+import { CouponService } from "src/app/services/coupon.service";
 
 @Component({
   selector: "app-dashboard",
@@ -30,13 +31,19 @@ export class DashboardComponent implements OnInit {
   public selectedSport: ISport;
   public slide: string = "0";
   public translate: number = 0;
-  constructor(private apiService: APIService) {}
+  constructor(
+    private apiService: APIService,
+    private couponService: CouponService
+  ) {}
 
   ngOnInit() {
     this.height = this.type === "live-bets" ? 263 : 270;
     this.options = ["football", "basketball", "tennis", "hockey"];
     this.getBets();
     this.watchBets();
+  }
+  public trackByName(index, item) {
+    return item.name;
   }
 
   public lounchSocket() {
@@ -116,6 +123,14 @@ export class DashboardComponent implements OnInit {
     this.basketball.items = [];
     this.tennis.items = [];
     this.hockey.items = [];
+  }
+
+  addToCoupon(bet: IBet, selectedIndex: number, $event) {
+    if (!$event) {
+      this.couponService.addToCoupon.next({ bet, selectedIndex });
+    } else {
+      this.couponService.removeFromCoupon.next(bet.id);
+    }
   }
 
   ngOnDestroy() {

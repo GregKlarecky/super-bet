@@ -4,7 +4,10 @@ import { Pipe, PipeTransform } from "@angular/core";
   name: "floor"
 })
 export class FloorPipe implements PipeTransform {
-  transform(value: any, args?: any): any {
-    return value ? value.toFixed(2) : "";
+  transform(value: number, args?: any): any {
+    if (value >= 0) {
+      return value.toFixed(2);
+    }
+    return "";
   }
 }

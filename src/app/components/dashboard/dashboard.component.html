@@ -63,11 +63,36 @@
       @bounceList
       *ngIf="selectedSport?.id === selectedId"
     >
-      <li *ngFor="let bet of selectedSport?.items" class="list-item">
+      <li
+        *ngFor="let bet of selectedSport?.items; trackBy: trackByName"
+        class="list-item"
+      >
         <div class="odds">12.03.19 12:30</div>
-        <app-bet *ngIf="bet" [team]="bet.teams[0]" class="odds"></app-bet>
-        <app-bet *ngIf="bet" [draw]="bet.draw | floor" class="odds"></app-bet>
-        <app-bet *ngIf="bet" [team]="bet.teams[1]" class="odds"></app-bet>
+
+        <app-bet
+          *ngIf="bet"
+          [team]="bet.teams[0]"
+          [id]="bet.id"
+          [index]="0"
+          class="odds"
+          (event)="addToCoupon(bet, 0, $event)"
+        ></app-bet>
+        <app-bet
+          *ngIf="bet"
+          [draw]="bet.draw | floor"
+          [index]="-1"
+          [id]="bet.id"
+          class="odds"
+          (event)="addToCoupon(bet, -1, $event)"
+        ></app-bet>
+        <app-bet
+          *ngIf="bet"
+          [team]="bet.teams[1]"
+          [id]="bet.id"
+          [index]="1"
+          class="odds"
+          (event)="addToCoupon(bet, 1, $event)"
+        ></app-bet>
       </li>
     </ul>
   </div>

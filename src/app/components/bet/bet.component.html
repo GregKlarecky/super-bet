@@ -1,4 +1,4 @@
-<div *ngIf="team">
+<div *ngIf="team" [class.selected]="selected">
   <span>
     {{ team.name }}
   </span>
@@ -6,7 +6,7 @@
     {{ team.win | floor }}
   </span>
 </div>
-<div *ngIf="draw">
+<div *ngIf="draw" [class.selected]="selected">
   <span>
     X
   </span>
