@@ -33,21 +33,27 @@
       <tr>
         <th class="clock"><i class="far fa-clock"></i></th>
         <th class="teams">event</th>
-        <th class="color-yellow">score</th>
-        <th>leage</th>
+        <th class="color-yellow score">score</th>
+        <th class="leage">leage</th>
         <th>1</th>
         <th>X</th>
         <th>2</th>
       </tr>
     </thead>
     <tbody @switchPage *ngIf="selectedSport?.id === selectedId">
-      <tr *ngFor="let bet of selectedSport?.items">
-        <td>12:30</td>
-        <td class="teams">
+      <tr
+        *ngFor="
+          let bet of selectedSport?.items;
+          trackBy: trackByName;
+          let i = index
+        "
+      >
+        <td>{{ dates[i] | date: "hh:mm" }}</td>
+        <td class="teams teams-data">
           {{ bet.teams[0].name }} vs {{ bet.teams[1].name }}
         </td>
-        <td class="color-yellow">1 : 0</td>
-        <td>Champion leage</td>
+        <td class="color-yellow">{{ scores[i] }}</td>
+        <td class="leage-data">{{ leages[i] }}</td>
         <td>{{ bet.teams[0].win | floor }}</td>
         <td>{{ bet.draw | floor }}</td>
         <td>{{ bet.teams[1].win | floor }}</td>
@@ -64,10 +70,14 @@
       *ngIf="selectedSport?.id === selectedId"
     >
       <li
-        *ngFor="let bet of selectedSport?.items; trackBy: trackByName"
+        *ngFor="
+          let bet of selectedSport?.items;
+          trackBy: trackByName;
+          let i = index
+        "
         class="list-item"
       >
-        <div class="odds">12.03.19 12:30</div>
+        <div class="odds">{{ dates[i] | date: "d.M.yy hh:mm" }}</div>
 
         <app-bet
           *ngIf="bet"

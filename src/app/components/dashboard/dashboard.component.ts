@@ -7,6 +7,7 @@ import { switchPage } from "src/app/animation/switchPage.animation";
 import { toggleDashboard } from "src/app/animation/toggleDashboard.animation";
 import { bounceList } from "src/app/animation/bounce-list.animation";
 import { CouponService } from "src/app/services/coupon.service";
+import { backlog } from "../card/backlog";
 
 @Component({
   selector: "app-dashboard",
@@ -31,19 +32,43 @@ export class DashboardComponent implements OnInit {
   public selectedSport: ISport;
   public slide: string = "0";
   public translate: number = 0;
+  public backlog: string[][] = backlog;
+  public leages: string[];
+  public dates: number[];
+  public scores: string[];
+  public dateRandomizer = 604800000;
   constructor(
     private apiService: APIService,
     private couponService: CouponService
   ) {}
 
   ngOnInit() {
-    this.height = this.type === "live-bets" ? 263 : 270;
+    this.height = this.type === "live-bets" ? 380 : 450;
     this.options = ["football", "basketball", "tennis", "hockey"];
     this.getBets();
     this.watchBets();
+    this.getRandomData();
   }
   public trackByName(index, item) {
     return item.name;
+  }
+
+  getRandomData() {
+    const arr = new Array(10).fill(null);
+    this.leages = arr.map(leage => {
+      const index = Math.floor(Math.random() * this.backlog[0].length);
+      return this.backlog[0][index];
+    });
+
+    this.dates = arr.map(item =>
+      Math.floor(new Date().getTime() + Math.random() * this.dateRandomizer)
+    );
+
+    const randomNumber = (index: number) => {
+      return Math.floor(Math.random() * index);
+    };
+
+    this.scores = arr.map(() => `${randomNumber(4)}:${randomNumber(4)}`);
   }
 
   public lounchSocket() {
@@ -82,13 +107,13 @@ export class DashboardComponent implements OnInit {
   public splitBetsToSports() {
     this.emptySports();
     for (let i = 0; i <= this.bets.length; i++) {
-      if (i < 5) {
+      if (i < 10) {
         this.football.items.push(this.bets[i]);
-      } else if (i < 10) {
-        this.basketball.items.push(this.bets[i]);
-      } else if (i < 15) {
-        this.tennis.items.push(this.bets[i]);
       } else if (i < 20) {
+        this.basketball.items.push(this.bets[i]);
+      } else if (i < 30) {
+        this.tennis.items.push(this.bets[i]);
+      } else if (i < 40) {
         this.hockey.items.push(this.bets[i]);
       }
     }

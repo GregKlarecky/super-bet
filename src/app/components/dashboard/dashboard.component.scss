@@ -40,15 +40,20 @@
   overflow-x: hidden;
 }
 
-.teams {
-  width: 290px;
-}
-
 .clock {
   width: 42px;
 }
 .wrapper {
   padding: 1rem;
+}
+.score {
+  width: 78px;
+}
+.leage {
+  width: 107px;
+  &-data {
+    text-align: left;
+  }
 }
 
 .best-bets {
@@ -95,4 +100,12 @@
   position: absolute;
   width: 140px;
   bottom: 0;
+}
+
+.teams {
+  width: 290px;
+  &-data {
+    text-align: left;
+    padding-left: 1rem !important;
+  }
 }
