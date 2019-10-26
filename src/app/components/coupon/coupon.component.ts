@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { CouponService } from "src/app/services/coupon.service";
-import { ITeam, IBet } from "src/app/interfaces/bet.interface";
 import { ICouponItem } from "src/app/interfaces/coupon-item.interface";
 
 @Component({

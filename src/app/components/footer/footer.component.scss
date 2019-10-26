@@ -8,3 +8,24 @@
     padding: 0 2rem;
   }
 }
+.wrapper {
+  padding: 2rem;
+}
+.services {
+  display: flex;
+  justify-content: space-between;
+  width: $screen-lg-min;
+  margin: auto;
+  ul {
+    li {
+      margin-bottom: 0.5rem;
+      color: rgba(255, 255, 255, 0.7);
+      &:first-child {
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

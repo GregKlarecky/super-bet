@@ -3,7 +3,6 @@ import {
   OnInit,
   Input,
   HostListener,
-  HostBinding,
   Output,
   EventEmitter
 } from "@angular/core";

@@ -4,18 +4,24 @@
       <img [src]="'assets/images/' + payment + '.png'" alt="" />
     </li>
   </ul>
-  <div class="services">
-    <ul class="list offer">
-      <li>some offer</li>
-    </ul>
-    <ul class="list products">
-      <li>some products</li>
-    </ul>
-    <ul class="list information">
-      <li>some information</li>
-    </ul>
-    <ul class="list About Super Bet">
-      <li>some About Super Bet</li>
-    </ul>
+  <div class="wrapper">
+    <div class="services">
+      <ul class="list offer">
+        <li>Offer</li>
+        <li *ngFor="let item of offer">{{ item }}</li>
+      </ul>
+      <ul class="list products">
+        <li>Products</li>
+        <li *ngFor="let product of products">{{ product }}</li>
+      </ul>
+      <ul class="list information">
+        <li>Information</li>
+        <li *ngFor="let info of information">{{ info }}</li>
+      </ul>
+      <ul class="list About Super Bet">
+        <li>About Super Bet</li>
+        <li *ngFor="let item of about">{{ item }}</li>
+      </ul>
+    </div>
   </div>
 </div>
