@@ -15,6 +15,8 @@ import { DimensionsDirective } from "./directives/dimensions.directive";
 import { CardComponent } from "./components/card/card.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { FormsModule } from "@angular/forms";
+import { PopUpComponent } from "./components/pop-up/pop-up.component";
+import { CouponConfirmComponent } from "./components/coupon-confirm/coupon-confirm.component";
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { FormsModule } from "@angular/forms";
     FloorPipe,
     DimensionsDirective,
     CardComponent,
-    FooterComponent
+    FooterComponent,
+    PopUpComponent,
+    CouponConfirmComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -38,6 +42,7 @@ import { FormsModule } from "@angular/forms";
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CouponConfirmComponent]
 })
 export class AppModule {}

@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { CouponService } from "src/app/services/coupon.service";
 import { ICouponItem } from "src/app/interfaces/coupon-item.interface";
+import { ModalService } from "src/app/services/modal.service";
+import { CouponConfirmComponent } from "../coupon-confirm/coupon-confirm.component";
 
 @Component({
   selector: "app-coupon",
@@ -10,7 +12,10 @@ import { ICouponItem } from "src/app/interfaces/coupon-item.interface";
 export class CouponComponent implements OnInit {
   stake: number = 5;
   events: ICouponItem[] = [];
-  constructor(private couponService: CouponService) {}
+  constructor(
+    private couponService: CouponService,
+    private modalService: ModalService
+  ) {}
 
   ngOnInit() {
     this.couponService.addToCoupon.subscribe(event => {
@@ -46,5 +51,9 @@ export class CouponComponent implements OnInit {
   public removeCoupon(id: number) {
     this.events = this.events.filter(bet => bet.bet.id !== id);
     this.couponService.coupon.next(this.events);
+  }
+
+  openCouponModal() {
+    this.modalService.popup.next(CouponConfirmComponent);
   }
 }

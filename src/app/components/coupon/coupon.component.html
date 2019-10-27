@@ -51,7 +51,7 @@
         <span> {{ getTotalOdds() * stake | floor }} PLN </span>
       </p>
 
-      <button class="button btn-coupon">
+      <button class="button btn-coupon" (click)="openCouponModal()">
         place bet
       </button>
     </div>
