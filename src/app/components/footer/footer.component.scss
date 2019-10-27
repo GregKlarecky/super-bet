@@ -12,6 +12,7 @@
   padding: 2rem;
 }
 .services {
+  max-width: $screen-lg-min;
   display: flex;
   justify-content: space-between;
   width: $screen-lg-min;

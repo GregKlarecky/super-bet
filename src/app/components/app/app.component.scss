@@ -4,3 +4,12 @@
   background: $brand-color-darker;
   display: block;
 }
+.content {
+  height: 100vh;
+  overflow: visible;
+}
+
+.lock {
+  overflow: hidden;
+  padding-right: 17px;
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { APIService } from "../../api.service";
+import { ModalService } from "src/app/services/modal.service";
 
 @Component({
   selector: "app-root",
@@ -7,21 +7,16 @@ import { APIService } from "../../api.service";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
-  title = "app";
+  public lockScroll: boolean = false;
 
-  constructor(private apiService: APIService) {}
+  constructor(private modalService: ModalService) {}
 
-  ngOnInit() {}
-
-  lounchSocket() {
-    this.apiService.pullStart().subscribe((data: any) => {
-      console.log(data);
+  ngOnInit() {
+    this.modalService.popup.subscribe(popup => {
+      this.lockScroll = true;
     });
-  }
-
-  quitSocket() {
-    this.apiService.pullStop().subscribe(resp => {
-      console.log(resp);
+    this.modalService.closePopup.subscribe(popup => {
+      this.lockScroll = false;
     });
   }
 }

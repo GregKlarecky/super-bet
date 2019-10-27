@@ -21,6 +21,9 @@ export class PopUpComponent {
     this.modalService.popup.subscribe(popup => {
       this.createDynamicComponent(popup);
     });
+    this.modalService.closePopup.subscribe(popup => {
+      this.removeDynamicComponent();
+    });
   }
   createDynamicComponent(component): void {
     const factory = this.componentFactoryResolver.resolveComponentFactory(
@@ -28,5 +31,9 @@ export class PopUpComponent {
     );
     const componentRef = this.viewContainerRef.createComponent(factory);
     componentRef.changeDetectorRef.detectChanges();
+  }
+
+  removeDynamicComponent() {
+    this.viewContainerRef.remove(0);
   }
 }

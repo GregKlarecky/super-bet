@@ -22,7 +22,7 @@
             <span>Draw</span>
           </div>
         </div>
-        <div class="close" (click)="removeCoupon(event.bet.id)">
+        <div class="close" (click)="removeFromCoupon(event.bet.id)">
           <span></span>
         </div>
       </li>
@@ -51,7 +51,11 @@
         <span> {{ getTotalOdds() * stake | floor }} PLN </span>
       </p>
 
-      <button class="button btn-coupon" (click)="openCouponModal()">
+      <button
+        class="button btn-coupon"
+        (click)="openCouponModal()"
+        [disabled]="!events.length || stake <= 0"
+      >
         place bet
       </button>
     </div>

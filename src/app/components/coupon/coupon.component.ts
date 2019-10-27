@@ -23,13 +23,13 @@ export class CouponComponent implements OnInit {
         storedBet => storedBet.bet.id === event.bet.id
       );
       if (copy) {
-        this.removeCoupon(event.bet.id);
+        this.removeFromCoupon(event.bet.id);
       }
       this.events = [...this.events, event];
       this.couponService.coupon.next(this.events);
     });
     this.couponService.removeFromCoupon.subscribe(id => {
-      this.removeCoupon(id);
+      this.removeFromCoupon(id);
     });
   }
 
@@ -48,12 +48,14 @@ export class CouponComponent implements OnInit {
     }
     return 0;
   }
-  public removeCoupon(id: number) {
+  public removeFromCoupon(id: number) {
     this.events = this.events.filter(bet => bet.bet.id !== id);
     this.couponService.coupon.next(this.events);
   }
 
   openCouponModal() {
+    this.events = [];
+    this.couponService.coupon.next(this.events);
     this.modalService.popup.next(CouponConfirmComponent);
   }
 }

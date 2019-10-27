@@ -3,6 +3,7 @@
   background: $brand-color;
   display: flex;
   width: 100%;
+  min-width: $screen-lg-min;
   justify-content: center;
   height: 75px;
 }

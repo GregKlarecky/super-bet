@@ -6,5 +6,6 @@ import { Subject } from "rxjs";
 })
 export class ModalService {
   public popup: Subject<any> = new Subject();
+  public closePopup: Subject<any> = new Subject();
   constructor() {}
 }
