@@ -14,7 +14,7 @@ export class CardComponent implements OnInit {
   public backlog: string[][] = backlog;
 
   ngOnInit() {
-    if (this.itemsSet) {
+    if (this.itemsSet >= 0) {
       this.items = this.backlog[this.itemsSet];
     }
   }
