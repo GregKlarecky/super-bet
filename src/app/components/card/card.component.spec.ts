@@ -26,14 +26,14 @@ describe("CardComponent", () => {
     expect(component).toBeTruthy();
   });
 
-  it("should render card items", () => {
+  it("should render 'Recommended' as card's title", () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     const title = compiled.querySelectorAll(".card-header")[0];
     expect(title.textContent).toEqual("Recommended");
   });
 
-  it("should render items", () => {
+  it("should render Premiership as first list's element", () => {
     component.itemsSet = 0;
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
@@ -41,7 +41,7 @@ describe("CardComponent", () => {
     expect(item.textContent).toContain(itemsMock[0]);
   });
 
-  it("should render items", () => {
+  it("should render only football pictures", () => {
     component.itemsSet = 0;
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
@@ -51,7 +51,7 @@ describe("CardComponent", () => {
     expect(isEveryImgAFootball).toBeTruthy();
   });
 
-  it("should render items", () => {
+  it("should render volleyball picture", () => {
     component.itemsSet = 1;
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
