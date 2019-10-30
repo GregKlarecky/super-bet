@@ -5,6 +5,7 @@
   <div class="options">
     <ul class="list options-list">
       <li
+        class="options-list-item"
         *ngFor="let option of options; let i = index"
         appDimensions
         (click)="selectSport(option, i)"
@@ -54,9 +55,9 @@
         </td>
         <td class="color-yellow">{{ scores[i] }}</td>
         <td class="leage-data">{{ leages[i] }}</td>
-        <td>{{ bet.teams[0].win | floor }}</td>
-        <td>{{ bet.draw | floor }}</td>
-        <td>{{ bet.teams[1].win | floor }}</td>
+        <td class="win-odds-first">{{ bet.teams[0].win | floor }}</td>
+        <td class="draw-odds">{{ bet.draw | floor }}</td>
+        <td class="win-odds-second">{{ bet.teams[1].win | floor }}</td>
       </tr>
     </tbody>
   </table>

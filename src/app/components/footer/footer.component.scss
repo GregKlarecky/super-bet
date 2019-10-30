@@ -8,14 +8,14 @@
     padding: 0 2rem;
   }
 }
-.wrapper {
-  padding: 2rem;
+.container {
+  min-width: $screen-lg-min;
 }
 .services {
+  padding: 2rem;
   max-width: $screen-lg-min;
   display: flex;
   justify-content: space-between;
-  width: $screen-lg-min;
   margin: auto;
   ul {
     li {

@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: "app-bet",
@@ -9,4 +9,5 @@ export class BetStub {
   @Input() id;
   @Input() index;
   @Input() draw;
+  @Output() event = new EventEmitter();
 }
