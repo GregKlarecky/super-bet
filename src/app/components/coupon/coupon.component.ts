@@ -18,7 +18,7 @@ export class CouponComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.couponService.addToCoupon.subscribe(event => {
+    this.couponService.addToCoupon.subscribe((event: ICouponItem) => {
       const copy = this.events.find(
         storedBet => storedBet.bet.id === event.bet.id
       );

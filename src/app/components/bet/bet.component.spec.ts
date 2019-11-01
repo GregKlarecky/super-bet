@@ -10,7 +10,7 @@ import { BetComponent } from "./bet.component";
 import { FloorPipe } from "src/app/pipes/floor.pipe";
 import { ITeam } from "src/app/interfaces/bet.interface";
 import { CouponService } from "src/app/services/coupon.service";
-import { couponMock } from "src/app/testing/coupons.mock.spec";
+import { couponMockArray } from "src/app/testing/coupons.mock.spec";
 import { CompilePipeMetadata } from "@angular/compiler";
 
 describe("BetComponent", () => {
@@ -62,12 +62,12 @@ describe("BetComponent", () => {
   });
 
   it("should render add selected class to wrapping div", fakeAsync(() => {
-    component.team = couponMock[0].bet.teams[0];
+    component.team = couponMockArray[0].bet.teams[0];
     component.index = 0;
     component.id = 1234;
     fixture.detectChanges();
 
-    couponService.coupon.next(couponMock);
+    couponService.coupon.next(couponMockArray);
 
     tick();
 
