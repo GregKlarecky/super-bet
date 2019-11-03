@@ -1,5 +1,5 @@
 const leages = [
-  "Priemiership",
+  "Premiership",
   "Germany 1st leage",
   "France 1st leage",
   "Spain 1st leage",

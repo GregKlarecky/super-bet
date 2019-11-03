@@ -9,7 +9,7 @@ export class NavbarComponent implements OnInit {
   public categories: string[] = [
     "sport betting",
     "live betting",
-    "cassino",
+    "casino",
     "bonuses"
   ];
 

@@ -52,15 +52,19 @@
           let i = index
         "
       >
-        <td>{{ dates[i] | date: "hh:mm" }}</td>
+        <td class="clock">{{ dates[i] | date: "hh:mm" }}</td>
         <td class="teams teams-data">
           {{ bet.teams[0].name }} vs {{ bet.teams[1].name }}
         </td>
-        <td class="color-yellow">{{ scores[i] }}</td>
+        <td class="color-yellow score">{{ scores[i] }}</td>
         <td class="leage-data">{{ leages[i] }}</td>
-        <td class="win-odds-first">{{ bet.teams[0].win | floor }}</td>
-        <td class="draw-odds">{{ bet.draw | floor }}</td>
-        <td class="win-odds-second">{{ bet.teams[1].win | floor }}</td>
+        <td class="odds-table win-odds-first">
+          {{ bet.teams[0].win | floor }}
+        </td>
+        <td class="odds-table draw-odds">{{ bet.draw | floor }}</td>
+        <td class="odds-table win-odds-second">
+          {{ bet.teams[1].win | floor }}
+        </td>
       </tr>
     </tbody>
   </table>

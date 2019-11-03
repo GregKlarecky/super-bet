@@ -1,6 +1,8 @@
 @import "~src/variables";
 
 .container {
+  position: relative;
+  overflow: hidden;
   border: 2px solid $yellow;
   background: #09172f;
   overflow-y: hidden;
@@ -53,6 +55,7 @@
 .leage {
   width: 107px;
   &-data {
+    width: 107px;
     text-align: left;
   }
 }
@@ -92,6 +95,9 @@
   }
   tbody {
     font-size: 12px;
+    position: absolute;
+    left: 0;
+    width: 100%;
     td {
       padding: 0.45rem 0;
     }
@@ -112,9 +118,14 @@
 .teams {
   width: 290px;
   &-data {
+    width: 290px;
     text-align: left;
     padding-left: 1rem !important;
   }
+}
+
+.odds-table {
+  width: 29px;
 }
 
 @media screen and (min-width: $screen-lg-min) {
