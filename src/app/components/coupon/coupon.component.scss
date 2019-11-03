@@ -15,14 +15,22 @@
   margin-bottom: 0.2rem;
 }
 
+.events-wrapper {
+  position: relative;
+  min-height: 35px;
+}
+
 .coupon-body {
-  margin: -0.5rem -0.7rem -0.5rem -0.7rem;
+  margin: -0.5rem -0.7rem;
+  overflow: hidden;
 }
 
 .bold {
   font-weight: 600;
 }
 .no-events {
+  position: absolute;
+  top: 0.5rem;
   display: flex;
   align-items: flex-start;
   img {

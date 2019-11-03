@@ -1,38 +1,40 @@
 <div class="card">
   <div class="card-header coupon-header">Coupon</div>
   <div class="card-body">
-    <ul class="list coupon-body" *ngIf="events?.length">
-      <li *ngFor="let event of events" class="bet-box">
-        <div class="bet">
-          <div class="row">
-            <span class="bold">
-              {{ event.bet.teams[0].name }} vs {{ event.bet.teams[1].name }}
-            </span>
-            <span *ngIf="event.selectedIndex >= 0" class="bold">
-              {{ event.bet.teams[event.selectedIndex].win | floor }}
-            </span>
-            <span *ngIf="event.selectedIndex < 0" class="bold">
-              {{ event.bet.draw | floor }}
-            </span>
+    <div class="events-wrapper">
+      <ul class="list coupon-body">
+        <li *ngFor="let event of events" class="bet-box" @gentleDrop>
+          <div class="bet">
+            <div class="row">
+              <span class="bold">
+                {{ event.bet.teams[0].name }} vs {{ event.bet.teams[1].name }}
+              </span>
+              <span *ngIf="event.selectedIndex >= 0" class="bold">
+                {{ event.bet.teams[event.selectedIndex].win | floor }}
+              </span>
+              <span *ngIf="event.selectedIndex < 0" class="bold">
+                {{ event.bet.draw | floor }}
+              </span>
+            </div>
+            <div class="row" *ngIf="event.selectedIndex >= 0">
+              <span>Win</span> <span>{{ event.selectedIndex + 1 }}</span>
+            </div>
+            <div class="row" *ngIf="event.selectedIndex < 0">
+              <span>Draw</span>
+            </div>
           </div>
-          <div class="row" *ngIf="event.selectedIndex >= 0">
-            <span>Win</span> <span>{{ event.selectedIndex + 1 }}</span>
+          <div class="close" (click)="removeFromCoupon(event.bet.id)">
+            <span></span>
           </div>
-          <div class="row" *ngIf="event.selectedIndex < 0">
-            <span>Draw</span>
-          </div>
-        </div>
-        <div class="close" (click)="removeFromCoupon(event.bet.id)">
-          <span></span>
-        </div>
-      </li>
-    </ul>
-    <div *ngIf="!events?.length" class="no-events">
-      <img src="assets/images/ico-list.png" alt="" />
-      <span>
-        Your coupon is empty.<br />
-        Add bet from list on the left.
-      </span>
+        </li>
+      </ul>
+      <div *ngIf="!events?.length" class="no-events" @fade>
+        <img src="assets/images/ico-list.png" alt="" />
+        <span>
+          Your coupon is empty.<br />
+          Add bet from list on the left.
+        </span>
+      </div>
     </div>
     <div class="totals">
       <p>

@@ -1,25 +1,31 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { PopUpComponent } from './pop-up.component';
+import { PopUpComponent } from "./pop-up.component";
+import { ModalService } from "src/app/services/modal.service";
+import { CouponConfirmStub } from "src/app/testing/coupon-confirm-stub.spec";
+import { FactoryResolverMock } from "src/app/testing/factory-resolver-mock.spec";
+import { ViewContainerRefMock } from "src/app/testing/view-container-ref.spec";
+import { ComponentFactoryResolver, ViewContainerRef } from "@angular/core";
 
-describe('PopUpComponent', () => {
+describe("PopUpComponent", () => {
   let component: PopUpComponent;
   let fixture: ComponentFixture<PopUpComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ PopUpComponent ]
-    })
-    .compileComponents();
-  }));
-
   beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [PopUpComponent, CouponConfirmStub],
+      providers: [
+        ModalService,
+        { provide: ComponentFactoryResolver, useClass: FactoryResolverMock },
+        { provide: ViewContainerRef, useClass: ViewContainerRefMock }
+      ]
+    }).compileComponents();
     fixture = TestBed.createComponent(PopUpComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
+    fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 });

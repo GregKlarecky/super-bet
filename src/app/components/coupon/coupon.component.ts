@@ -3,11 +3,14 @@ import { CouponService } from "src/app/services/coupon.service";
 import { ICouponItem } from "src/app/interfaces/coupon-item.interface";
 import { ModalService } from "src/app/services/modal.service";
 import { CouponConfirmComponent } from "../coupon-confirm/coupon-confirm.component";
+import { gentleDrop } from "src/app/animation/gantle-drop.animation";
+import { fade } from "src/app/animation/fade.animation";
 
 @Component({
   selector: "app-coupon",
   templateUrl: "./coupon.component.html",
-  styleUrls: ["./coupon.component.scss"]
+  styleUrls: ["./coupon.component.scss"],
+  animations: [gentleDrop, fade]
 })
 export class CouponComponent implements OnInit {
   stake: number = 5;

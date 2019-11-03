@@ -25,6 +25,7 @@
     <ng-container
       *ngTemplateOutlet="type === 'live-bets' ? liveBets : simpleBets"
     ></ng-container>
+    <app-loader *ngIf="!selectedSport" class="loader-position"></app-loader>
   </div>
 </div>
 

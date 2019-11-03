@@ -17,6 +17,7 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { FormsModule } from "@angular/forms";
 import { PopUpComponent } from "./components/pop-up/pop-up.component";
 import { CouponConfirmComponent } from "./components/coupon-confirm/coupon-confirm.component";
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CouponConfirmComponent } from "./components/coupon-confirm/coupon-confi
     CardComponent,
     FooterComponent,
     PopUpComponent,
-    CouponConfirmComponent
+    CouponConfirmComponent,
+    LoaderComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
