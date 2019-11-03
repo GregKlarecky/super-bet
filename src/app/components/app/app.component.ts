@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { ModalService } from "src/app/services/modal.service";
 
 @Component({
   selector: "app-root",
@@ -9,14 +8,7 @@ import { ModalService } from "src/app/services/modal.service";
 export class AppComponent implements OnInit {
   public lockScroll: boolean = false;
 
-  constructor(private modalService: ModalService) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.modalService.popup.subscribe(popup => {
-      this.lockScroll = true;
-    });
-    this.modalService.closePopup.subscribe(popup => {
-      this.lockScroll = false;
-    });
-  }
+  ngOnInit() {}
 }

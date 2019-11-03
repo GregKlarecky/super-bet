@@ -18,10 +18,17 @@ export class FooterComponent implements OnInit, OnDestroy {
   products: string[] = products;
   information: string[] = information;
   about: string[] = about;
-
+  selectedList: string;
   constructor() {}
 
   ngOnInit() {}
 
   ngOnDestroy() {}
+
+  select(list: string) {
+    if (this.selectedList === list) {
+      return (this.selectedList = undefined);
+    }
+    this.selectedList = list;
+  }
 }

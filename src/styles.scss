@@ -30,7 +30,6 @@ body {
 }
 
 .card {
-  // border: 1px solid transparent;
   &-header {
     border-radius: 5px 5px 0 0;
     font-weight: 500;
@@ -46,13 +45,16 @@ body {
     border-radius: 0 0 5px 5px;
     background: $brand-color-dark;
     padding: 1rem;
-    // font-size: $font-sm;
   }
 }
 
 .mb-1 {
   display: block;
   margin-bottom: 1rem;
+}
+
+.body-padding {
+  padding-right: 0;
 }
 
 .mobile {
@@ -69,6 +71,9 @@ body {
 }
 
 @media screen and (min-width: $screen-lg-min) {
+  .body-padding {
+    padding-right: 17px;
+  }
   .mobile {
     display: none !important;
   }

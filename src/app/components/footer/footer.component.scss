@@ -4,6 +4,7 @@
   background: $brand-color-dark;
   padding: 1rem 0;
   justify-content: center;
+  flex-wrap: wrap;
   li {
     padding: 0 2rem;
   }
@@ -11,13 +12,17 @@
 .container {
 }
 .services {
-  padding: 2rem;
+  padding: 2rem 1rem;
   display: flex;
   justify-content: space-between;
   margin: auto;
   flex-direction: column;
+  align-items: flex-start;
   ul {
+    width: 100%;
+    margin-bottom: 1rem;
     li {
+      text-align: center;
       margin-bottom: 0.5rem;
       color: rgba(255, 255, 255, 0.7);
       &:first-child {
@@ -30,6 +35,13 @@
   }
 }
 
+.sublist-item {
+  display: none;
+}
+.active {
+  display: block;
+}
+
 @media screen and (min-width: $screen-lg-min) {
   .container {
     min-width: $screen-lg-min;
@@ -38,5 +50,16 @@
   .services {
     max-width: $screen-lg-min;
     flex-direction: row;
+    ul {
+      width: auto;
+      margin-bottom: none;
+      li {
+        text-align: left;
+      }
+    }
+  }
+
+  .sublist-item {
+    display: block;
   }
 }

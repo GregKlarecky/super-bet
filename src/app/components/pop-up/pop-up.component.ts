@@ -18,9 +18,13 @@ export class PopUpComponent implements OnInit {
   ) {}
   ngOnInit() {
     this.modalService.popup.subscribe(popup => {
+      document.body.style.overflowY = "hidden";
+      document.body.className = "body-padding";
       this.createDynamicComponent(popup);
     });
     this.modalService.closePopup.subscribe(popup => {
+      document.body.style.overflowY = "auto";
+      document.body.className = "";
       this.removeDynamicComponent();
     });
   }

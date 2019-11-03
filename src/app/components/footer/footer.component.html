@@ -1,5 +1,5 @@
 <div class="container">
-  <ul class="list payments-list desktop-flex">
+  <ul class="list payments-list">
     <li *ngFor="let payment of payments">
       <img [src]="'assets/images/' + payment + '.png'" alt="" />
     </li>
@@ -7,20 +7,44 @@
   <div class="wrapper">
     <div class="services">
       <ul class="list offer">
-        <li>Offer</li>
-        <li *ngFor="let item of offer">{{ item }}</li>
+        <li (click)="select('offer')">Offer</li>
+        <li
+          *ngFor="let item of offer"
+          [class.active]="selectedList === 'offer'"
+          class="sublist-item"
+        >
+          {{ item }}
+        </li>
       </ul>
       <ul class="list products">
-        <li>Products</li>
-        <li *ngFor="let product of products">{{ product }}</li>
+        <li (click)="select('products')">Products</li>
+        <li
+          *ngFor="let product of products"
+          [class.active]="selectedList === 'products'"
+          class="sublist-item"
+        >
+          {{ product }}
+        </li>
       </ul>
       <ul class="list information">
-        <li>Information</li>
-        <li *ngFor="let info of information">{{ info }}</li>
+        <li (click)="select('information')">Information</li>
+        <li
+          *ngFor="let info of information"
+          [class.active]="selectedList === 'information'"
+          class="sublist-item"
+        >
+          {{ info }}
+        </li>
       </ul>
       <ul class="list about-super-bet">
-        <li>About Super Bet</li>
-        <li *ngFor="let item of about">{{ item }}</li>
+        <li (click)="select('about')">About Super Bet</li>
+        <li
+          *ngFor="let item of about"
+          [class.active]="selectedList === 'about'"
+          class="sublist-item"
+        >
+          {{ item }}
+        </li>
       </ul>
     </div>
   </div>
