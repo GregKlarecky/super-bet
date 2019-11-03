@@ -7,8 +7,6 @@
       <li
         class="options-list-item"
         *ngFor="let option of options; let i = index"
-        appDimensions
-        (dims)="setHighLighterWidth($event)"
         (click)="selectSport(option, i)"
       >
         <img [src]="'assets/images/' + option + '.png'" [alt]="option" />
@@ -32,42 +30,41 @@
 </div>
 
 <ng-template #liveBets>
-  <table class="live-betting">
-    <thead>
-      <tr>
-        <th class="clock"><i class="far fa-clock"></i></th>
-        <th class="teams">event</th>
-        <th class="color-yellow score">score</th>
-        <th class="leage">leage</th>
-        <th>1</th>
-        <th>X</th>
-        <th>2</th>
-      </tr>
-    </thead>
-    <tbody @switchPage *ngIf="selectedSport?.id === selectedId">
-      <tr
+  <div class="live-betting">
+    <div class="head">
+      <div class="clock"><i class="far fa-clock"></i></div>
+      <div class="teams">event</div>
+      <div class="color-yellow score">score</div>
+      <div class="leage">leage</div>
+      <div>1</div>
+      <div>X</div>
+      <div>2</div>
+    </div>
+    <div class="t-body" @switchPage *ngIf="selectedSport?.id === selectedId">
+      <div
+        class="t-body-item"
         *ngFor="
           let bet of selectedSport?.items;
           trackBy: trackByName;
           let i = index
         "
       >
-        <td class="clock">{{ dates[i] | date: "hh:mm" }}</td>
-        <td class="teams teams-data">
+        <div class="clock">{{ dates[i] | date: "hh:mm" }}</div>
+        <div class="teams teams-data">
           {{ bet.teams[0].name }} vs {{ bet.teams[1].name }}
-        </td>
-        <td class="color-yellow score">{{ scores[i] }}</td>
-        <td class="leage-data">{{ leages[i] }}</td>
-        <td class="odds-table win-odds-first">
+        </div>
+        <div class="color-yellow score">{{ scores[i] }}</div>
+        <div class="leage-data">{{ leages[i] }}</div>
+        <div class="odds-table win-odds-first">
           {{ bet.teams[0].win | floor }}
-        </td>
-        <td class="odds-table draw-odds">{{ bet.draw | floor }}</td>
-        <td class="odds-table win-odds-second">
+        </div>
+        <div class="odds-table draw-odds">{{ bet.draw | floor }}</div>
+        <div class="odds-table win-odds-second">
           {{ bet.teams[1].win | floor }}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </ng-template>
 
 <ng-template #simpleBets>

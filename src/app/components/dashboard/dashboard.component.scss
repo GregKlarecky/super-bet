@@ -30,7 +30,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 140px;
+        width: 130px;
         img {
           margin-right: 0.5rem;
         }
@@ -86,20 +86,30 @@
   text-align: center;
   background: #09172f;
   width: 100%;
-  thead {
+  .head {
+    display: flex;
+    padding: 0 0.5rem;
+    justify-content: space-between;
     text-transform: uppercase;
-    th {
+    div {
       padding: 0.6rem;
       font-weight: 500;
     }
   }
-  tbody {
+  .t-body {
+    display: flex;
+    flex-direction: column;
     font-size: 12px;
     position: absolute;
     left: 0;
     width: 100%;
-    td {
-      padding: 0.45rem 0;
+    padding: 0 0.5rem;
+    &-item {
+      justify-content: space-between;
+      display: flex;
+      div {
+        padding: 0.45rem 0;
+      }
     }
   }
 }
@@ -111,7 +121,7 @@
 .highlighteer {
   border: 1px solid $yellow;
   position: absolute;
-  width: 140px;
+  width: 130px;
   bottom: 0;
 }
 

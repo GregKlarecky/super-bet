@@ -11,13 +11,12 @@ import { appRoutes } from "./routes";
 import { BetComponent } from "./components/bet/bet.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FloorPipe } from "./pipes/floor.pipe";
-import { DimensionsDirective } from "./directives/dimensions.directive";
 import { CardComponent } from "./components/card/card.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { FormsModule } from "@angular/forms";
 import { PopUpComponent } from "./components/pop-up/pop-up.component";
 import { CouponConfirmComponent } from "./components/coupon-confirm/coupon-confirm.component";
-import { LoaderComponent } from './components/loader/loader.component';
+import { LoaderComponent } from "./components/loader/loader.component";
 
 @NgModule({
   declarations: [
@@ -28,7 +27,6 @@ import { LoaderComponent } from './components/loader/loader.component';
     CouponComponent,
     BetComponent,
     FloorPipe,
-    DimensionsDirective,
     CardComponent,
     FooterComponent,
     PopUpComponent,

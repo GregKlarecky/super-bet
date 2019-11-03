@@ -37,14 +37,14 @@ export class DashboardComponent implements OnInit {
   public dates: number[];
   public scores: string[];
   public dateRandomizer = 604800000;
-  public highlighterWidth: number = 140;
+  public highlighterWidth: number = 130;
   constructor(
     private apiService: APIService,
     private couponService: CouponService
   ) {}
 
   ngOnInit() {
-    this.height = this.type === "live-bets" ? 380 : 450;
+    this.height = this.type === "live-bets" ? 390 : 450;
     this.options = ["football", "basketball", "tennis", "hockey"];
     this.getBets();
     this.watchBets();
@@ -52,10 +52,6 @@ export class DashboardComponent implements OnInit {
   }
   public trackByName(index, item) {
     return item.name;
-  }
-
-  setHighLighterWidth($event: number) {
-    this.highlighterWidth = $event;
   }
 
   getRandomData() {
