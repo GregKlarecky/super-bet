@@ -24,7 +24,7 @@ export const gentleDrop = trigger("gentleDrop", [
       keyframes([
         style({ transform: "translateY(10%)", offset: 0.2 }),
         style({ transform: "translateY(-50%)", opacity: 0, offset: 0.6 }),
-        style({ height: 0, padding: 0, offset: 1 })
+        style({ height: 0, offset: 1 })
       ])
     )
   ])

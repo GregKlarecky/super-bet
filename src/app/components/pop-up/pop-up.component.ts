@@ -34,6 +34,6 @@ export class PopUpComponent {
   }
 
   removeDynamicComponent() {
-    this.viewContainerRef.remove(0);
+    this.viewContainerRef.clear();
   }
 }

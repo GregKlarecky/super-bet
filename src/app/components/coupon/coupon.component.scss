@@ -10,7 +10,10 @@
   justify-content: space-between;
   background: $yellow-active;
   color: $brand-color-dark;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
+  height: 55px;
+  display: flex;
+  align-items: center;
   border-radius: 3px;
   margin-bottom: 0.2rem;
 }
