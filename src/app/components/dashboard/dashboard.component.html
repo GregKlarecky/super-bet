@@ -8,6 +8,7 @@
         class="options-list-item"
         *ngFor="let option of options; let i = index"
         appDimensions
+        (dims)="setHighLighterWidth($event)"
         (click)="selectSport(option, i)"
       >
         <img [src]="'assets/images/' + option + '.png'" [alt]="option" />
@@ -16,6 +17,7 @@
         </span>
       </li>
       <span
+        [ngStyle]="{ width: highlighterWidth + 'px' }"
         class="highlighteer"
         [@slide]="{ value: slide, params: { translate: translate } }"
       ></span>

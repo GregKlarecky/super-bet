@@ -7,9 +7,29 @@
 .content {
   height: 100vh;
   overflow: visible;
+  display: none;
 }
 
 .lock {
   overflow: hidden;
   padding-right: 17px;
+}
+
+.screen-size-warning {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5rem;
+  height: 100vh;
+  padding: 0 1rem;
+  background: $brand-color-dark;
+}
+@media screen and (min-width: $screen-s-min) {
+  .content {
+    display: block;
+  }
+  .screen-size-warning {
+    display: none;
+  }
 }

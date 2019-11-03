@@ -19,6 +19,7 @@
     text-transform: uppercase;
     cursor: pointer;
     color: #fff;
+    font-size: 12px;
     &-list {
       position: relative;
       display: flex;
@@ -113,5 +114,13 @@
   &-data {
     text-align: left;
     padding-left: 1rem !important;
+  }
+}
+
+@media screen and (min-width: $screen-lg-min) {
+  .container {
+    .option {
+      font-size: 14px;
+    }
   }
 }

@@ -9,14 +9,13 @@
   }
 }
 .container {
-  min-width: $screen-lg-min;
 }
 .services {
   padding: 2rem;
-  max-width: $screen-lg-min;
   display: flex;
   justify-content: space-between;
   margin: auto;
+  flex-direction: column;
   ul {
     li {
       margin-bottom: 0.5rem;
@@ -28,5 +27,16 @@
         margin-bottom: 1rem;
       }
     }
+  }
+}
+
+@media screen and (min-width: $screen-lg-min) {
+  .container {
+    min-width: $screen-lg-min;
+  }
+
+  .services {
+    max-width: $screen-lg-min;
+    flex-direction: row;
   }
 }

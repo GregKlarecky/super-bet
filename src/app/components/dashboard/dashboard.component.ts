@@ -37,6 +37,7 @@ export class DashboardComponent implements OnInit {
   public dates: number[];
   public scores: string[];
   public dateRandomizer = 604800000;
+  public highlighterWidth: number = 140;
   constructor(
     private apiService: APIService,
     private couponService: CouponService
@@ -51,6 +52,10 @@ export class DashboardComponent implements OnInit {
   }
   public trackByName(index, item) {
     return item.name;
+  }
+
+  setHighLighterWidth($event: number) {
+    this.highlighterWidth = $event;
   }
 
   getRandomData() {
@@ -138,7 +143,7 @@ export class DashboardComponent implements OnInit {
 
   public selectSport(sportId: string, index: number) {
     this.selectedId = sportId;
-    this.translate = 140 * index;
+    this.translate = this.highlighterWidth * index;
     this.slide = index.toString();
     this.splitBetsToSports();
   }

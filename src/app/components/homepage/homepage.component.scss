@@ -1,20 +1,16 @@
 @import "~src/variables";
 
 .container {
-  width: $screen-lg-min;
+  width: 100%;
   padding: 1rem;
   margin: auto;
   display: flex;
+  flex-direction: column;
 }
 
 .nav {
-  &-left {
-    margin-right: 0.5rem;
-    width: 20%;
-  }
   &-right {
-    width: 25%;
-    margin-left: 0.5rem;
+    width: 100%;
   }
   &-item {
     margin-bottom: 1rem;
@@ -22,10 +18,35 @@
   }
 }
 .main {
-  width: 55%;
-  margin: 0 0.5rem;
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
 .banner {
   width: 100%;
+}
+
+@media screen and (min-width: $screen-lg-min) {
+  .container {
+    width: $screen-lg-min;
+    flex-direction: row;
+  }
+  .nav {
+    &-left {
+      margin-right: 0.5rem;
+      width: 20%;
+    }
+    &-right {
+      width: 25%;
+      margin-left: 0.5rem;
+    }
+    &-item {
+      margin-bottom: 1rem;
+      display: block;
+    }
+  }
+  .main {
+    width: 55%;
+    margin: 0 0.5rem;
+  }
 }

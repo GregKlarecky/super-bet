@@ -4,14 +4,13 @@ import {
   ViewContainerRef,
   ComponentFactoryResolver
 } from "@angular/core";
-import { CouponConfirmComponent } from "../coupon-confirm/coupon-confirm.component";
 import { ModalService } from "src/app/services/modal.service";
 
 @Component({
   selector: "app-pop-up",
   template: ""
 })
-export class PopUpComponent {
+export class PopUpComponent implements OnInit {
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
     private viewContainerRef: ViewContainerRef,

@@ -54,3 +54,31 @@ body {
   display: block;
   margin-bottom: 1rem;
 }
+
+.mobile {
+  display: block !important;
+}
+.mobile-flex {
+  display: flex !important;
+}
+.desktop {
+  display: none !important;
+}
+.desktop-flex {
+  display: none !important;
+}
+
+@media screen and (min-width: $screen-lg-min) {
+  .mobile {
+    display: none !important;
+  }
+  .mobile-flex {
+    display: none !important;
+  }
+  .desktop {
+    display: block !important;
+  }
+  .desktop-flex {
+    display: flex !important;
+  }
+}
