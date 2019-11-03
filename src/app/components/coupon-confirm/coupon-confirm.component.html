@@ -1,4 +1,4 @@
-<div class="card modal">
+<div class="card modal" @gentleDrop *ngIf="show">
   <div class="card-header">Your coupon has been created</div>
   <div class="card-body modal-body">
     <div class="content">
@@ -8,4 +8,4 @@
     <button class="button" (click)="close()">OK</button>
   </div>
 </div>
-<div class="backdrop"></div>
+<div class="backdrop" @fade *ngIf="show"></div>
