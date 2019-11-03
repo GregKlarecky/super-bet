@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { APIService } from "src/app/api.service";
-import { IBet, ISport, ITeam } from "src/app/interfaces/bet.interface";
+import { IBet, ISport } from "src/app/interfaces/bet.interface";
 import { slide } from "src/app/animation/dashboard-slide.animation";
 import { timer } from "rxjs";
 import { switchPage } from "src/app/animation/switchPage.animation";

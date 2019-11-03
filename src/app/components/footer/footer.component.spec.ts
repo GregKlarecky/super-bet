@@ -29,11 +29,11 @@ describe("FooterComponent", () => {
   it("should render offer", () => {
     const compiled = fixture.debugElement.nativeElement;
     const offer = compiled.querySelectorAll(".offer")[0].querySelectorAll("li");
-    expect(offer[1].textContent).toEqual(component.offer[0]);
+    expect(offer[1].textContent).toContain(component.offer[0]);
   });
 
   it("should have 'Quick registration' in products", () => {
-    expect(component.products[0]).toEqual("Quick registration");
+    expect(component.products[0]).toContain("Quick registration");
   });
 
   it("should render products", () => {
@@ -41,11 +41,11 @@ describe("FooterComponent", () => {
     const products = compiled
       .querySelectorAll(".products")[0]
       .querySelectorAll("li");
-    expect(products[1].textContent).toEqual(component.products[0]);
+    expect(products[1].textContent).toContain(component.products[0]);
   });
 
   it("should have 'Customer center' in information", () => {
-    expect(component.information[0]).toEqual("Customer center");
+    expect(component.information[0]).toContain("Customer center");
   });
 
   it("should render information", () => {
@@ -53,11 +53,11 @@ describe("FooterComponent", () => {
     const information = compiled
       .querySelectorAll(".information")[0]
       .querySelectorAll("li");
-    expect(information[1].textContent).toEqual(component.information[0]);
+    expect(information[1].textContent).toContain(component.information[0]);
   });
 
   it("should have 'Customer center' in about", () => {
-    expect(component.about[0]).toEqual("Information about Super Bet");
+    expect(component.about[0]).toContain("Information about Super Bet");
   });
 
   it("should render about", () => {
@@ -65,11 +65,11 @@ describe("FooterComponent", () => {
     const about = compiled
       .querySelectorAll(".about-super-bet")[0]
       .querySelectorAll("li");
-    expect(about[1].textContent).toEqual(component.about[0]);
+    expect(about[1].textContent).toContain(component.about[0]);
   });
 
   it("should have 'dotpay' in payments", () => {
-    expect(component.payments[0]).toEqual("dotpay");
+    expect(component.payments[0]).toContain("dotpay");
   });
 
   it("should render payments", () => {

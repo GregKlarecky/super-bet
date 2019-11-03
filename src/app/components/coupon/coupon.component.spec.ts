@@ -13,6 +13,7 @@ import { CouponService } from "src/app/services/coupon.service";
 import { of } from "rxjs";
 import { couponMock, couponDrawMock } from "src/app/testing/coupons.mock.spec";
 import { ModalService } from "src/app/services/modal.service";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 describe("CouponComponent", () => {
   let component: CouponComponent;
@@ -24,7 +25,7 @@ describe("CouponComponent", () => {
     TestBed.configureTestingModule({
       declarations: [CouponComponent, FloorPipe],
       providers: [CouponService, ModalService],
-      imports: [FormsModule]
+      imports: [FormsModule, BrowserAnimationsModule]
     }).compileComponents();
   }));
 

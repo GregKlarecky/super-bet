@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { betsMock, betMock } from "src/app/testing/bet.mock.spec";
 import { of } from "rxjs";
 import { CouponService } from "src/app/services/coupon.service";
+import { LoaderStub } from "src/app/testing/loader.stub.spec";
 
 describe("DashboardComponent", () => {
   let component: DashboardComponent;
@@ -24,7 +25,7 @@ describe("DashboardComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [DashboardComponent, FloorPipe, BetStub],
+      declarations: [DashboardComponent, FloorPipe, BetStub, LoaderStub],
       providers: [
         { provide: APIService, useClass: ApiServiceMock },
         CouponService
